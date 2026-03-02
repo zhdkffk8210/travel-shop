@@ -1,7 +1,42 @@
 import { useCart } from "../contexts/useCart";
+import { api } from "../api/axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPanel() {
   const { items, removeFromCart, updateQuantity, totalPrice } = useCart();
+  const navigate = useNavigate();
+
+  async function handleCheckout() {
+    try {
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        alert("로그인이 필요합니다.");
+        return;
+      }
+
+      const orderItems = items.map((item) => ({
+        productId: item.product._id,
+        quantity: item.quantity
+      }));
+
+      await api.post(
+        "/orders",
+        { items: orderItems },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+
+      alert("주문이 완료되었습니다!");
+      navigate("/complete");
+    } catch (error) {
+      console.error(error);
+      alert("주문 실패");
+    }
+  }
 
   return (
     <div
@@ -63,6 +98,14 @@ export default function CartPanel() {
       <hr />
 
       <h3>총 금액: {totalPrice.toLocaleString()}원</h3>
+
+      <button
+        style={{ marginTop: "15px", width: "100%" }}
+        onClick={handleCheckout}
+        disabled={items.length === 0}
+      >
+        주문하기
+      </button>
     </div>
   );
 }
