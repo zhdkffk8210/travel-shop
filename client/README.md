@@ -131,3 +131,12 @@ http://localhost:5174
 - UI 컴포넌트 스타일 통합 (CSS Module / Styled Components)
 - 반응형 모바일 최적화
 
+
+참고내용
+
+1. npm install
+2. .env 파일 생성
+3. VITE_API_URL=https://travel-shop-rjza.onrender.com/api
+4. npm run dev
+
+

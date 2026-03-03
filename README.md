@@ -147,6 +147,8 @@ https://travel-shop-full.vercel.app/
 ### Backend API:
 https://travel-shop-rjza.onrender.com
 
+※ Backend는 Render Free 플랜으로 배포되어 있어 첫 요청 시 지연이 발생할 수 있습니다.
+
 ---
 
 ## 📌 향후 개선 사항
