@@ -4,6 +4,7 @@ import type { Product, ProductsResponse } from "../types/product";
 import ProductList from "../components/ProductList";
 import FilterBar from "../components/FilterBar";
 import CartPanel from "../components/CartPanel";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -13,6 +14,15 @@ export default function Home() {
     max?: string;
     search?: string;
   }>({});
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -24,19 +34,19 @@ export default function Home() {
     }
 
     fetchProducts();
-  }, [filters]); // 🔥 filters가 바뀔 때만 실행
+  }, [filters]);
 
   return (
-  <div style={{ display: "flex" }}>
-    <div style={{ flex: 1, padding: "20px" }}>
-      <h1>여행 상품 목록</h1>
+    <div style={{ display: "flex", maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
+      <div style={{ flex: 1, padding: "20px" }}>
+        <h1>여행 상품 목록</h1>
 
-      <FilterBar onFilter={setFilters} />
+        <FilterBar onFilter={setFilters} />
 
-      <ProductList products={products} />
+        <ProductList products={products} />
+      </div>
+
+      <CartPanel />
     </div>
-
-    <CartPanel />
-    </div>
-);
+  );
 }

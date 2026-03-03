@@ -3,7 +3,7 @@ import { api } from "../api/axios";
 import { useNavigate } from "react-router-dom";
 
 export default function CartPanel() {
-  const { items, removeFromCart, updateQuantity, totalPrice } = useCart();
+  const { items, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart();
   const navigate = useNavigate();
 
   async function handleCheckout() {
@@ -30,6 +30,9 @@ export default function CartPanel() {
         }
       );
 
+     
+      clearCart();
+
       alert("주문이 완료되었습니다!");
       navigate("/complete");
     } catch (error) {
@@ -49,7 +52,7 @@ export default function CartPanel() {
     >
       <h2>🛒 장바구니</h2>
 
-      {items.length === 0 && <p>담긴 상품이 없습니다.</p>}
+      {items.length === 0 && <p>장바구니가 비어 있습니다.</p>}
 
       {items.map((item) => (
         <div

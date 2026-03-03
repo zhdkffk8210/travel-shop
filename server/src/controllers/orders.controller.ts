@@ -71,3 +71,66 @@ export async function createOrder(
     next(error);
   }
 }
+
+export async function getMyOrders(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
+  try {
+    if (!req.user) {
+      res.status(401).json({ message: "로그인이 필요합니다." });
+      return;
+    }
+
+    const orders = await Order.find({ userId: req.user.id })
+      .populate("items.productId")
+      .sort({ createdAt: -1 });
+
+    res.status(200).json(orders);
+
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function payOrder(
+  req: Request<{ id: string }>,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
+  try {
+    if (!req.user) {
+      res.status(401).json({ message: "로그인이 필요합니다." });
+      return;
+    }
+
+    const { id } = req.params;
+
+    const order = await Order.findById(id);
+
+    if (!order) {
+      res.status(404).json({ message: "주문을 찾을 수 없습니다." });
+      return;
+    }
+
+    // 내 주문만 결제 처리 가능
+    if (order.userId.toString() !== req.user.id) {
+      res.status(403).json({ message: "권한이 없습니다." });
+      return;
+    }
+
+    // 이미 결제 완료면 그대로 반환
+    if (order.status === "paid") {
+      res.status(200).json(order);
+      return;
+    }
+
+    order.status = "paid";
+    await order.save();
+
+    res.status(200).json(order);
+  } catch (error) {
+    next(error);
+  }
+}

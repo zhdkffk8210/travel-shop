@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# 📁 `client/README.md`
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Travel Shop - Frontend
 
-Currently, two official plugins are available:
+React + TypeScript 기반 여행 상품 판매 서비스 프론트엔드
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📦 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- TypeScript
+- Context API
+- Axios
+- React Router
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 폴더 구조
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+├─ api/
+│ └─ axios.ts
+├─ components/
+│ ├─ ProductCard.tsx
+│ ├─ ProductList.tsx
+│ └─ CartPanel.tsx
+├─ contexts/
+│ ├─ CartProvider.tsx
+│ └─ useCart.ts
+├─ pages/
+│ ├─ Home.tsx
+│ ├─ Login.tsx
+│ └─ OrderComplete.tsx
+└─ App.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 실행 방법
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+---
+
+## 🔐 인증 흐름
+
+1. 로그인 성공
+2. JWT 토큰 localStorage 저장
+3. 주문 시 Authorization 헤더 자동 추가
+
+---
+
+## 🛒 장바구니
+
+- 상품 추가
+- 수량 변경
+- 삭제
+- 총 금액 자동 계산
+- 주문 버튼 연결
+
+---
+
+## 🧠 설계 특징
+
+- Context API 전역 상태 관리
+- 서버 가격 기준 계산
+- 토큰 기반 인증 처리
+- 컴포넌트 분리 설계
+
+---
+
+## 📌 향후 개선
+
+- 내 주문 페이지
+- 결제 상태 UI
+- 관리자 상품 관리
+- UI 개선

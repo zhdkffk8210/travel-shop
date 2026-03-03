@@ -41,6 +41,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   }
 
+  // 🔥 여기 추가
+  function clearCart() {
+    setItems([]);
+  }
+
   const totalPrice = items.reduce(
     (sum, item) => sum + item.product.price * item.quantity,
     0
@@ -48,7 +53,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider
-      value={{ items, addToCart, removeFromCart, updateQuantity, totalPrice }}
+      value={{
+        items,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        totalPrice
+      }}
     >
       {children}
     </CartContext.Provider>

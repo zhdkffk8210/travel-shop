@@ -5,7 +5,70 @@
     "price": 349000,
     "duration": "2박 3일",
     "description": "오름 트레킹 + 맛집 포함",
-    "image": "https://example.com/jeju.jpg",
+    "image": "https://picsum.photos/300/200?1",
     "rating": 4.6
+  },
+  {
+    "title": "부산 바다 힐링 여행",
+    "category": "국내",
+    "price": 289000,
+    "duration": "2박 3일",
+    "description": "해운대 + 광안리 투어",
+    "image": "https://picsum.photos/300/200?2",
+    "rating": 4.4
+  },
+  {
+    "title": "강릉 감성 여행",
+    "category": "국내",
+    "price": 199000,
+    "duration": "1박 2일",
+    "description": "카페 투어 + 바다",
+    "image": "https://picsum.photos/300/200?3",
+    "rating": 4.3
+  },
+  {
+    "title": "울릉도 자연 탐방",
+    "category": "국내",
+    "price": 399000,
+    "duration": "2박 3일",
+    "description": "독도 포함 투어",
+    "image": "https://picsum.photos/300/200?4",
+    "rating": 4.5
+  },
+  {
+    "title": "도쿄 3박 4일 자유여행",
+    "category": "해외",
+    "price": 899000,
+    "duration": "3박 4일",
+    "description": "항공 + 호텔 포함",
+    "image": "https://picsum.photos/300/200?5",
+    "rating": 4.8
+  },
+  {
+    "title": "오사카 먹방 여행",
+    "category": "해외",
+    "price": 799000,
+    "duration": "3박 4일",
+    "description": "유니버셜 + 맛집 탐방",
+    "image": "https://picsum.photos/300/200?6",
+    "rating": 4.7
+  },
+  {
+    "title": "방콕 럭셔리 패키지",
+    "category": "해외",
+    "price": 1199000,
+    "duration": "4박 5일",
+    "description": "5성급 호텔 + 마사지",
+    "image": "https://picsum.photos/300/200?7",
+    "rating": 4.9
+  },
+  {
+    "title": "파리 5박 6일 낭만 여행",
+    "category": "해외",
+    "price": 1899000,
+    "duration": "5박 6일",
+    "description": "에펠탑 + 루브르 박물관",
+    "image": "https://picsum.photos/300/200?8",
+    "rating": 4.9
   }
 ]
