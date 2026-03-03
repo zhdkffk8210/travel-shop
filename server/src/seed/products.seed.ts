@@ -14,7 +14,7 @@ export async function seedProducts(): Promise<void> {
     return;
   }
 
-  const filePath = path.join(__dirname, "products.json");
+  const filePath = path.resolve("src/seed/products.json");
 
   const raw = fs.readFileSync(filePath, "utf-8");
   const products = JSON.parse(raw);
