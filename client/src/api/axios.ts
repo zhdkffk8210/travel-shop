@@ -1,10 +1,9 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:5000/api"
+  baseURL: import.meta.env.VITE_API_URL
 });
 
-// 🔥 요청 보낼 때 자동으로 토큰 붙이기
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");

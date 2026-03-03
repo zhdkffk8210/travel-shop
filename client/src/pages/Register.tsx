@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../api/axios";
+import axios from "axios";
 
 export default function Register() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
-  const handleRegister = async (e: React.FormEvent) => {
+  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -18,26 +20,19 @@ export default function Register() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
+      await api.post("/auth/register", {
+        email,
+        password,
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        setMessage(data.message);
-        return;
-      }
-
       alert("회원가입 성공!");
-      navigate("/login"); // 로그인 페이지로 이동
-    } catch (err) {
-      console.error(err);
-      setMessage("서버 오류 발생");
+      navigate("/login");
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        setMessage(error.response?.data?.message ?? "회원가입 실패");
+      } else {
+        setMessage("서버 오류 발생");
+      }
     }
   };
 
