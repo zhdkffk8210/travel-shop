@@ -144,7 +144,6 @@ postman.md
 - 관리자 페이지 추가
 - 상품 CRUD 기능 확장
 - 주문 취소 기능
-- 장바구니 localStorage 유지
 - Docker 배포 구성
 - Swagger API 문서화
 
