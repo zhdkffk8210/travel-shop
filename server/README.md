@@ -52,6 +52,9 @@ src/
 │ ├─ products.json # 초기 상품 데이터
 │ └─ products.seed.ts # DB 초기화 로직
 │
+├─ types/
+│  └─ express.d.ts          # Express Request 타입 확장 (req.user 추가)
+│
 ├─ app.ts # Express 앱 설정
 └─ server.ts # 서버 실행 진입점
 ```

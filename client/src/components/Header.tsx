@@ -22,8 +22,8 @@ export default function Header() {
         boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
       }}
     >
-      <div style={{ fontWeight: "bold", fontSize: "18px" }}>
-        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+      <div style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "bold", fontSize: "24px", letterSpacing: "-1px" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "blue" }}> 
           ✈️ Travel Shop
         </Link>
       </div>

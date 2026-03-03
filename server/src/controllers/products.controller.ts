@@ -23,7 +23,7 @@ export async function getProducts(
 
     const filter: Record<string, unknown> = {};
 
-    // 1️⃣ 카테고리 필터
+    // 카테고리 필터
     if (category) {
       if (category !== "국내" && category !== "해외") {
         res.status(400).json({ items: [], count: 0 });
@@ -32,7 +32,7 @@ export async function getProducts(
       filter.category = category;
     }
 
-    // 2️⃣ 가격 필터
+    // 가격 필터
     const minPrice = min ? Number(min) : undefined;
     const maxPrice = max ? Number(max) : undefined;
 
@@ -53,7 +53,7 @@ export async function getProducts(
       };
     }
 
-    // 3️⃣ 검색 필터
+    // 검색 필터
     if (search && search.trim() !== "") {
       filter.$or = [
         { title: { $regex: search, $options: "i" } },

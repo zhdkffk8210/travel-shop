@@ -87,7 +87,8 @@ const containerStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  height: "100vh",
+  minHeight: "calc(100vh - 60px)",
+  paddingTop: "20px",             
   background: "#f4f6f8",
 };
 

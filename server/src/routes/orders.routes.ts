@@ -7,5 +7,5 @@ export const ordersRouter = Router();
 ordersRouter.post("/", authMiddleware, createOrder);
 ordersRouter.get("/my", authMiddleware, getMyOrders);
 
-// 🔥 결제 완료 처리
+// 결제 완료 처리
 ordersRouter.patch("/:id/pay", authMiddleware, payOrder);
