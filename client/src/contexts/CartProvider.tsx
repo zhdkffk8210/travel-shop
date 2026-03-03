@@ -41,7 +41,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   }
 
-  // 🔥 여기 추가
   function clearCart() {
     setItems([]);
   }
