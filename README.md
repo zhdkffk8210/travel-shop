@@ -139,6 +139,16 @@ postman.md
 
 ---
 
+## 🔗 배포 주소
+
+### Frontend:
+https://travel-shop-full.vercel.app/
+
+### Backend API:
+https://travel-shop-rjza.onrender.com
+
+---
+
 ## 📌 향후 개선 사항
 
 - 관리자 페이지 추가
