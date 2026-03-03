@@ -158,3 +158,12 @@ postman.md
 - Context API 상태 관리 학습
 - MongoDB 관계형 데이터 처리 (populate)
 
+---
+
+# 👨‍💻 개발자
+
+풀스택 20회차 ( 전성우 편대호 김영환 )
+
+Full Stack Developer
+
+Travel Shop은 인증, 주문, 결제 상태 관리까지 구현한 Full Stack 프로젝트입니다.
