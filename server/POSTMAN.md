@@ -1,6 +1,6 @@
 # 📁 `POSTMAN.md`
 
-# 🌍 Travel Shop API Test Guide (Postman)
+# ✈️ Travel Shop API Test Guide (Postman)
 
 이 문서는 Travel Shop Backend API를 Postman으로 테스트하는 가이드입니다.
 
