@@ -80,11 +80,15 @@ http://localhost:5174
 
 ## 🔐 인증 흐름
 
-1. 회원가입
-2. 로그인 → JWT 발급
-3. 토큰 localStorage 저장
-4. 주문 요청 시 Authorization 헤더 자동 포함
-5. PrivateRoute를 통한 보호 페이지 접근 제어
+## 🔐 인증 흐름
+
+1. 회원가입 (POST /api/auth/register)
+2. 로그인 (POST /api/auth/login)
+3. 서버에서 JWT 토큰 발급
+4. 토큰을 localStorage에 저장
+5. Axios Interceptor로 Authorization 헤더 자동 포함
+6. 서버에서 JWT 인증 미들웨어로 요청 검증
+7. PrivateRoute로 인증된 사용자만 보호 페이지 접근 가능
 
 ## 🛒 주요 기능
 
