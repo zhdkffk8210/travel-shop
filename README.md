@@ -80,8 +80,6 @@ http://localhost:5174
 
 ## 🔐 인증 흐름
 
-## 🔐 인증 흐름
-
 1. 회원가입 (POST /api/auth/register)
 2. 로그인 (POST /api/auth/login)
 3. 서버에서 JWT 토큰 발급
