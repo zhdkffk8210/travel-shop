@@ -1,4 +1,4 @@
-# 🌍 Travel Shop
+# ✈️ Travel Shop
 
 React + Express + MongoDB 기반 여행 상품 판매 서비스
 
