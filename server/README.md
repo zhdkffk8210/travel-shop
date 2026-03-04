@@ -1,6 +1,6 @@
 # 📁 `server/README.md`
 
-# 🌍 Travel Shop - Backend
+# ✈️ Travel Shop - Backend
 
 Express + TypeScript + MongoDB 기반 여행 상품 판매 서비스 백엔드
 
