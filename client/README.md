@@ -1,6 +1,6 @@
 # 📁 `client/README.md`
 
-# 🌍 Travel Shop - Frontend
+# ✈️ Travel Shop - Frontend
 
 React + TypeScript 기반 여행 상품 판매 서비스 프론트엔드
 
