@@ -78,6 +78,8 @@ npm run dev
 http://localhost:5174
 ```
 
+---
+
 ## 🔐 인증 흐름
 
 1. 회원가입 (POST /api/auth/register)
